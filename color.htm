@@ -1,0 +1,25 @@
+<canvas id='canvas' width=800 height=600>
+<script>
+	
+	function polygon(a, colorBorde, colorRelleno, grosor) { 
+	ctx.beginPath()
+	ctx.strokeStyle = colorBorde
+	ctx.fillStyle = colorRelleno
+	ctx.lineWidth = grosor;
+	ctx.moveTo(a[0],a[1])
+	for (i=2; i < a.length; i+=2)
+	ctx.lineTo(a[i],a[i+1]);
+	ctx.closePath()
+	ctx.stroke()
+	ctx.fill()
+}
+
+	var canvas = document.getElementById('canvas')
+	var ctx = canvas.getContext('2d');
+
+	polygon([ 265,205, 320,160, 375,205, 355,130, 410,88, 344,88, 320,12, 298,88, 230,88, 284,130 ], 'rgba(255,242,0)', 'rgba(34,177,76)', 4)
+
+	polygon([ 120,25, 120,288, 240,288 ], '#33FFCA', '#AACBAC', 4) 
+ 
+
+</script>
